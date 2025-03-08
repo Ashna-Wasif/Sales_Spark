@@ -22,7 +22,7 @@ namespace Sales.Server.Controllers
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                string query = "SELECT userId, userName, userAccessLevel FROM Users WHERE user_Email = @Email AND user_Password = @Password";
+                string query = "SELECT userId, userName, userAccessLevel FROM Users WHERE userEmail = @Email AND userPassword = @Password";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -35,9 +35,9 @@ namespace Sales.Server.Controllers
                         {
                             var loggedInUser = new
                             {
-                                user_Id = reader["user_Id"],
-                                user_Name = reader["user_Name"],
-                                user_AccessLevel = reader["user_AccessLevel"]
+                                user_Id = reader["userId"],
+                                user_Name = reader["userName"],
+                                user_AccessLevel = reader["userAccessLevel"]
                             };
 
                             return Ok(loggedInUser);

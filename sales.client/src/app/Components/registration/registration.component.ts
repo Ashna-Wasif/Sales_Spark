@@ -16,7 +16,7 @@ export class RegistrationComponent {
   login() {
     const user = { user_Email: this.email, user_Password: this.password };
 
-    this.http.post('http://localhost:5000/api/user/login', user).subscribe(
+    this.http.post('https://localhost:7170/login', user).subscribe(
       response => {
         console.log('Login Successful', response);
       },
