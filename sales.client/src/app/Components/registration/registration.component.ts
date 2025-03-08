@@ -10,19 +10,27 @@ import { HttpClient } from '@angular/common/http';
 export class RegistrationComponent {
   email: string = '';
   password: string = '';
+  name: string = '';
+  number: string = '';
+  Cpassword: string = '';
 
   constructor(private http: HttpClient) { }
 
-  login() {
-    const user = { user_Email: this.email, user_Password: this.password };
+  signup() {
+    if (this.password == this.Cpassword) {
+      const user = { user_Email: this.email, user_Password: this.password, user_name: this.name, user_Contact: this.number };
 
-    this.http.post('https://localhost:7170/login', user).subscribe(
-      response => {
-        console.log('Login Successful', response);
-      },
-      error => {
-        console.log('Login Failed', error);
-      }
-    );
+      this.http.post('https://localhost:7170/signup', user).subscribe(
+        response => {
+          console.log('User Added Successfully', response);
+        },
+        error => {
+          console.log('Registration Failed', error);
+        }
+      );
+    }
+    else {
+      console.log("Password Mismatched.");
+    }
   }
 }

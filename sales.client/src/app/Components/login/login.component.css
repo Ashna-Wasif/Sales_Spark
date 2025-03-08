@@ -2,8 +2,6 @@
 
 * {
   box-sizing: border-box;
-  top:0;
-  overflow:hidden;
 }
 
 body {
@@ -96,9 +94,9 @@ input {
   overflow: hidden;
   width: 768px; /* Keeps it from taking full width */
   max-width: 100%;
-  min-height: 550px;
-  /*margin: auto;*/ /* Centers it */
-  margin-top: 0;
+  min-height: 480px;
+  margin: auto; /* Centers it */
+  margin-top: 5vh;
   position: relative;
 }
 

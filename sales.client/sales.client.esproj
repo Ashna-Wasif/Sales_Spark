@@ -9,8 +9,10 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="NewFolder\**" />
+    <None Remove="src\app\login\**" />
     <None Remove="src\NewFolder\**" />
     <TypeScriptConfiguration Remove="NewFolder\**" />
+    <TypeScriptConfiguration Remove="src\app\login\**" />
     <TypeScriptConfiguration Remove="src\NewFolder\**" />
   </ItemGroup>
   <ItemGroup>

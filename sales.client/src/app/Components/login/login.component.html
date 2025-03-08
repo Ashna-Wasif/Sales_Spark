@@ -1,22 +1,19 @@
 <div class="container" id="container">
   <div class="form-container sign-in-container">
-    <form (submit)="signup()">
-      <h1>Register Now </h1>
+    <form (submit)="login()">
+      <h1>Welcome Back </h1>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook"></i></a>
         <a href="#" class="social"><i class="fab fa-google"></i></a>
         <a href="#" class="social"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
-      <span>Or Create Your Account</span>
-      <input type="text" [(ngModel)]="name" name="name" required placeholder="Username" />
+      <span>or use your account</span>
       <input type="email" [(ngModel)]="email" name="email" placeholder="Email" />
-      <input type="text" [(ngModel)]="number" name="number" placeholder="Contact Number" />
       <input type="password" [(ngModel)]="password" name="password" required placeholder="Password" />
-      <input type="password" [(ngModel)]="Cpassword" name="Cpassword" required placeholder="Confirm Password" />
-
-      <button>Register</button>
+      <button>Log in</button>
       <div class="d-flex justify-content-center gap-3">
-        <a href="#">Login</a>
+        <a href="#">Forgot password?</a>
+        <a href="#">Register Now</a>
       </div>
     </form>
   </div>

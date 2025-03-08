@@ -8,16 +8,19 @@ namespace Sales.Server.Controllers
     public class UserController : Controller
     {
         private readonly IConfiguration _configuration;
+        private string connectionString;
 
         public UserController(IConfiguration configuration)
         {
             _configuration = configuration;
+            connectionString = _configuration.GetConnectionString("DefaultConnection");
+
         }
+
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] Users user)
-        {
-            string connectionString = _configuration.GetConnectionString("DefaultConnection");
+        {           
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -48,7 +51,49 @@ namespace Sales.Server.Controllers
 
             return Unauthorized("Invalid Email or Password");
         }
-    
+
+        [HttpPost("signup")]
+        public IActionResult SignUp([FromBody] Users user)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Checking if the user already exists
+                string checkUserQuery = "SELECT COUNT(*) FROM Users WHERE userEmail = @Email";
+                using (SqlCommand checkCmd = new SqlCommand(checkUserQuery, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("@Email", user.user_Email);
+                    int userExists = (int)checkCmd.ExecuteScalar();
+                    if (userExists > 0)
+                    {
+                        return BadRequest("User already exists.");
+                    }
+                }
+                // Insert new user
+                string insertQuery = "INSERT INTO Users (userName, userEmail, userPassword, userAccessLevel, userContact) VALUES (@Name, @Email, @Password, @AccessLevel, @Contact)";
+
+                using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Name", user.user_Name);
+                    cmd.Parameters.AddWithValue("@Email", user.user_Email);
+                    cmd.Parameters.AddWithValue("@Password", user.user_Password); 
+                    cmd.Parameters.AddWithValue("@AccessLevel",3);
+                    cmd.Parameters.AddWithValue("@Contact", user.user_Contact);
+
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        return Ok(new { message = "User registered successfully." });
+                    }
+                }
+            }
+
+            return BadRequest("User registration failed.");
+        }
+
+
 
         // GET: UserController
         public ActionResult Index()
@@ -71,10 +116,12 @@ namespace Sales.Server.Controllers
         // POST: UserController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Users user)
         {
             try
             {
+               
+
                 return RedirectToAction(nameof(Index));
             }
             catch
