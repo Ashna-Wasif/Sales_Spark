@@ -40,23 +40,32 @@
   </div>
 </nav>
 
-<!-- Example Content Below Navbar -->
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
-<p>hello</p>
+
+
+<div class="container mt-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="../landingpage.JPG"  alt="Landing Page Image">
+    </div>
+    <div class="col-md-6 text-center">
+      <h1 class="fw-bold">Your Guide to the Best Brand Deals!</h1>
+      <h4 class="text-secondary">Track Sales from All Your Favorite Brands!</h4>
+      <p class="mt-3">Never miss a sale again! Our platform helps you track discounts, offers, and promotions from top brands, ensuring you always get the best deals. Shop smarter, save more, and enjoy hassle-free bargain hunting—all in one place!</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div *ngFor="let product of products" class="col-md-4 mb-4">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" [src]="product.ImageUrl" alt="Card image"> <!-- Ensure this matches JSON -->
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5> <!-- Ensure this matches JSON -->
+        <p class="card-text">{{ product.category }}</p> <!-- Ensure this matches JSON -->
+        <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p> <!-- Ensure this matches JSON -->
+        <a href="#" class="btn btn-primary">Go</a>
+      </div>
+    </div>
+  </div>
+</div>
