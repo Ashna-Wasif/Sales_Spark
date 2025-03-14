@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';  
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +15,7 @@ export class RegistrationComponent {
   number: string = '';
   Cpassword: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   signup() {
     if (this.password == this.Cpassword) {
@@ -23,6 +24,7 @@ export class RegistrationComponent {
       this.http.post('https://localhost:7170/signup', user).subscribe(
         response => {
           console.log('User Added Successfully', response);
+          this.router.navigate(['/home']); 
         },
         error => {
           console.log('Registration Failed', error);

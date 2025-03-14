@@ -1,0 +1,104 @@
+/* Remove default margins and padding from all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container-fluid {
+  width: 100vw;
+  max-width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important; /* Ensure all margins are removed */
+  padding: 0 !important; /* Ensure all padding is removed */
+  background-color: rgb(244, 240, 236);
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex; /* Added display: flex for better layout control */
+  align-items: center; /* Centers elements vertically */
+}
+
+/* Logo Styling */
+.navbar-brand img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 10px; /* Added margin for better spacing */
+}
+
+/* Search Bar */
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: end; /* Keeps search bar at the end */
+  align-items: center;
+}
+
+.search-bar {
+  width: 400px;
+  border-radius: 25px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  margin: 0 10px; /* Added margin for better spacing */
+}
+
+/* Icon Styling */
+.icon-container {
+  text-align: center;
+  color: black;
+  margin: 0 5px; /* Reduced margin for tighter spacing */
+  cursor: pointer;
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #66B9AD;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin: auto;
+  border: none;
+}
+
+  .icon-circle button {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-circle i {
+    color: white;
+    font-size: 20px;
+  }
+
+.icon-container span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+}
