@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { LoginComponent } from './Components/login/login.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
+import { AuditorPageComponent } from './Components/auditor-page/auditor-page.component';
+import { UsersProfileComponent } from './Components/users-profile/users-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    AuditorPageComponent,
+    UsersProfileComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, 
