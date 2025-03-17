@@ -28,7 +28,7 @@ export class HomepageComponent {
   }
 
   fetchProducts(): void {
-    this.http.get<any[]>('https://localhost:7170/api/Product/FetchProducts').subscribe(
+    this.http.get<any[]>('https://localhost:7170/api/products/FetchProducts').subscribe(
       (data: any[]) => {
         this.products = data; // Assign fetched data to the products array
       },

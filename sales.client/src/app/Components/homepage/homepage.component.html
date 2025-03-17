@@ -25,16 +25,16 @@
 
       <div class="icon-container">
         <div class="icon-circle">
-          <button><i class="fas fa-plus-circle"></i></button>
+          <button><i class="fas fa-tag"></i></button>
         </div>
-        <span>Post a Deal</span>
+        <span>Deals</span>
       </div>
 
       <div class="icon-container">
         <div class="icon-circle">
           <button><i class="fas fa-user"></i></button>
         </div>
-        <span>Sign Up</span>
+        <span>Login </span>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@
 <div class="container mt-5">
   <div class="row align-items-center">
     <div class="col-md-6">
-      <img src="../landingpage.JPG"  alt="Landing Page Image">
+      <img src="../landingpage.JPG" alt="Landing Page Image">
     </div>
     <div class="col-md-6 text-center">
       <h1 class="fw-bold">Your Guide to the Best Brand Deals!</h1>
@@ -56,16 +56,70 @@
 </div>
 
 
-<div class="row">
-  <div *ngFor="let product of products" class="col-md-4 mb-4">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" [src]="product.ImageUrl" alt="Card image"> <!-- Ensure this matches JSON -->
-      <div class="card-body">
-        <h5 class="card-title">{{ product.name }}</h5> <!-- Ensure this matches JSON -->
-        <p class="card-text">{{ product.category }}</p> <!-- Ensure this matches JSON -->
-        <p class="card-text"><strong>Price:</strong> ${{ product.price }}</p> <!-- Ensure this matches JSON -->
-        <a href="#" class="btn btn-primary">Go</a>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div *ngFor="let product of products" class="col-md-4 mb-4 d-flex justify-content-center">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="./card.jpg" alt="Card image">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.prodName }}</h5>
+          <p class="card-text">{{ product.prodCategory }}</p>
+          <p class="card-text"><strong>Price:</strong> ${{ product.prodPrice }}</p>
+          <a href="#" class="btn btn-primary">View This Product</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Follow Us</h5>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+          <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>About</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Advertising Opportunities</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>More</h5>
+        <ul>
+          <li><a href="#">Deal Alerts</a></li>
+          <li><a href="#">Slickdeals Live</a></li>
+          <li><a href="#">Black Friday Deals 2025</a></li>
+          <li><a href="#">Slickdeals Cashback Rewards</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Other Terms and Policies</a></li>
+          <li><a href="#">Interest-Based Ads</a></li>
+          <li><a href="#">Do Not Sell My Personal Information</a></li>
+          <li><a href="#">Website Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-logo">
+      <img src="./SalesSparkLogo.JPG" alt="Company Logo">
+    </div>
+
+    <p class="copyright">© 2025 Sales Spark. All Rights Reserved.</p>
+  </div>
+</footer>

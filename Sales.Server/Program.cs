@@ -1,8 +1,17 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.EntityFrameworkCore;
+using Sales.Server.Model;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+//New code here
+
+builder.Services.AddDbContext<AppDbContext>(opts =>
+opts.UseSqlServer(builder.Configuration.GetConnectionString("Default")
+));
 
 builder.Services.AddCors(options =>
 {

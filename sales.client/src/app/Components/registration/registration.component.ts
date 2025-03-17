@@ -21,10 +21,10 @@ export class RegistrationComponent {
     if (this.password == this.Cpassword) {
       const user = { user_Email: this.email, user_Password: this.password, user_name: this.name, user_Contact: this.number };
 
-      this.http.post('https://localhost:7170/signup', user).subscribe(
+      this.http.post('https://localhost:7170/api/users/signup', user).subscribe(
         response => {
           console.log('User Added Successfully', response);
-          this.router.navigate(['/home']); 
+          this.router.navigate(['/']); 
         },
         error => {
           console.log('Registration Failed', error);
