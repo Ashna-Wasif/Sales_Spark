@@ -1,0 +1,150 @@
+
+.navbar {
+  /*  background-color: #D3D3D3 !important;*/
+  background-color: #1E9E92 !important;
+  padding: 2px 2px;
+}
+
+  .navbar .navbar-brand {
+   text-align:center;
+    color: whitesmoke;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family:'Californian FB';
+  }
+
+/* Logo Styling */
+.navbar img {
+  height: 85px;
+  width: 95px;
+  border-radius: 5%;
+  object-fit: cover;
+  margin: 0 5px; /* Added margin for better spacing */
+}
+
+  .navbar .nav-link {
+    color: white !important;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0 10px;
+  }
+
+  
+    .navbar .nav-link:hover {
+      color: #008080 !important;
+      font-weight: bold;
+      
+      text-decoration: underline;
+     
+    }
+
+.user-icon {
+  font-size: 2rem; /* Large icon size */
+  color: #a0a0a0; /* Light gray icon */
+  background-color: #e0e0e0; /* Light gray circular background */
+  border-radius: 50%; /* Makes the background circular */
+  padding: 15px; /* Adjust padding to control circle size */
+  display: flex; /* Ensures proper alignment */
+  align-items: center;
+  justify-content: center;
+  width: 70px; /* Adjust to match height */
+  height: 70px; /* Ensures the circle */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+  .user-icon:hover {
+    color: #8C8C8C; /* Darker gray icon on hover */
+    background-color: #c0c0c0; /* Slightly darker background on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+
+
+.container {
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+
+
+
+.main-layout {
+ display: flex;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;  
+}
+
+
+.sidebar {
+  width: 200px;
+  background-color: #1E9E92;
+  color: white;
+  /* height: 120vh;*/
+
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto; /* Adjust height dynamically */
+  min-height: 100vh; /* Ensure it still fills the screen height at minimum */
+}
+
+  .sidebar a {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 5px;
+    margin: 3px 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+  }
+    .sidebar a i {
+      margin-left: auto; /* Push icon to the right */
+      
+    }
+
+    .sidebar a:hover {
+      background-color: gainsboro;
+      color: teal;
+      font-style: italic;
+    }
+
+    
+
+.content {
+    flex:1;
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  z-index: 1;
+}
+
+  .content::before {
+    content: '';
+    position: fixed; /* Use absolute positioning relative to .content */
+    top: 52%; /* Center vertically */
+    left: 57%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to truly center */
+    width: 400px;
+    height: 400px;
+    background: url('/SalesSparkLogo.JPG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* Ensure the image covers the circle */
+    border-radius: 50%; /* Make it circular */
+    opacity: 0.2; /* Adjust the opacity */
+    z-index: -1; /* Place it behind the content */
+  }
+
+

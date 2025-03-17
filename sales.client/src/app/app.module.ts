@@ -10,6 +10,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { HomepageComponent } from './Components/homepage/homepage.component';
 import { AuditorPageComponent } from './Components/auditor-page/auditor-page.component';
 import { UsersProfileComponent } from './Components/users-profile/users-profile.component';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UsersProfileComponent } from './Components/users-profile/users-profile.
     LoginComponent,
     HomepageComponent,
     AuditorPageComponent,
-    UsersProfileComponent
+    UsersProfileComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, 
