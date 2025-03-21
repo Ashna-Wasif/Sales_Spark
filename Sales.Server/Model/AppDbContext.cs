@@ -7,7 +7,9 @@ namespace Sales.Server.Model
     public class AppDbContext:DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> option) : base(option) { }
-        public DbSet <Users> Users { get; set; }
+       
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Products> Products { get; set; }
         public DbSet<UserLogs> UserLog { get; set; }
          
 

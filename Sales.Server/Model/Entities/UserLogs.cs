@@ -9,9 +9,9 @@ namespace Sales.Server.Model.Entities
         public int LogID { get; set; } 
 
         [ForeignKey("Users")]
-        public int user_Id{ get; set; }  
+        public int UserId { get; set; }
 
-       
+
         public string actionType { get; set; } 
 
         public string actionDetails { get; set; }  

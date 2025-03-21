@@ -15,7 +15,4 @@
     <TypeScriptConfiguration Remove="src\app\login\**" />
     <TypeScriptConfiguration Remove="src\NewFolder\**" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\app\Components\" />
-  </ItemGroup>
 </Project>
